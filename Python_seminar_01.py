@@ -55,6 +55,22 @@ def task03():
 # 3 2 4 -> yes
 # 3 2 1 -> no
 
-#task01()
-#task02()
+def task04():
+    lengthShoko =int( input ("Введите длину шоколадки: "))
+    widthShoko =int( input ("Введите ширину шоколадки: "))
+    cutShoko =int( input ("Введите количество долек: "))
+    
+    if (lengthShoko<widthShoko):
+        temp=lengthShoko
+        lengthShoko=widthShoko
+        widthShoko=temp
+        
+    if ((cutShoko%lengthShoko==0 or cutShoko%widthShoko==0) and lengthShoko*widthShoko>cutShoko):
+        print ("Да, вроде, разделится")
+        
+    else: print ("Не делись, кушай так!")
+
+task01()
+task02()
 task03()
+task04()
