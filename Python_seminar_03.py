@@ -4,9 +4,9 @@
 # 5    1 2 3 4 5
 #     3
 #     -> 1
+from random import randint
 def task01():
     listcounttask1 = int (input("Введите длину списка: "))
-    from random import randint
     listtask1 = [randint(1, listcounttask1) for i in range(listcounttask1)]
     #print (listtask1)
     numbertask1 = int (input("Введите число: "))
@@ -25,9 +25,17 @@ def task01():
 #     -> 5
 def task02():
     listcounttask2 = int (input("Введите длину списка: "))
-    listtask2 =list(range(1,listcounttask2+1))
-    print(listtask2)
+    listtask2 = [randint(1, 20) for i in range(listcounttask2)]
+    #print(listtask2)
     numbertask2 = int (input("Введите число: "))
+    indexValue=0
+    minValue = abs(numbertask2 - listtask2[0])
+    for i in range(1, listcounttask2):
+        tempValue = abs(numbertask2 -listtask2[i])
+        if tempValue < minValue:
+            minValue = tempValue
+            indexValue=i
+    print(f"Самый близкий по величине элемент к числу {numbertask2} — это {listtask2[indexValue]}")
     
 # *Задача 20: * В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность. 
 # В случае с английским алфавитом очки распределяются так:
@@ -55,6 +63,6 @@ def task03():
                 count=count+key
     print (f"Цена слова {word} равна {count}")
     
-#task01()
-#task02()
+task01()
+task02()
 task03()
