@@ -34,3 +34,6 @@ def task02():
         else:
             return summ(number1-1, number2+1)
     print (f"Сумма {number1} и {number2} равна {summ(number1, number2)}")
+    
+    task01()
+    task02()
