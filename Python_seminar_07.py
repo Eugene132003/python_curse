@@ -7,18 +7,25 @@
 # *Пример:*
 # **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да    
 #     **Вывод:** Парам пам-пам
-from random import randint
-    
-
-
 
 
 def task01():
-    firstNumberArray = int (input("Введите первый элемент списка: "))
-    disArray=int(input("Введите разность элементов списка:"))
-    lengthArray = int (input("Введите количество элементов списка: "))
-    resultArray = [firstNumberArray + (i - 1) * disArray for i in range(1, lengthArray + 1)]
-    print(*resultArray)
+    def rhythm(str):
+        str = str.split()
+    list_1 = []
+    for word in str:
+        sum_w = 0
+        for i in word:
+            if i in 'аеёиоуыэюя':
+                sum_w += 1
+        list_1.append(sum_w)
+    return len(list_1) == list_1.count(list_1[0])
+
+    str_1 = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
+    if rhythm(str_1):
+        print('Парам пам-пам')
+    else:
+        print('Пам парам')
 
 # Задача 36: Напишите функцию print_operation_table(operation, num_rows=6, num_columns=6), 
 # которая принимает в качестве аргумента функцию, вычисляющую элемент по номеру строки и столбца. 
@@ -36,15 +43,7 @@ def task01():
 # 5 10 15 20 25 30
 # 6 12 18 24 30 36
 
-
 def task02():
-    listcount = [randint(-50, 50) for i in range(20)]
-    minNumber = int(input("Введите минимум диапозона: "))
-    maxNumber = int(input("Введите максимум диапозона: "))
-    for i in range(len(listcount)):
-        if minNumber <= listcount[i] <= maxNumber:
-            print(i)
-
 
 task01()
-task02()
+# task02()
